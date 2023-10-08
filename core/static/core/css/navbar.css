@@ -1,0 +1,59 @@
+.navbar-custom {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  position: sticky; /* Makes the navbar stick to the top */
+  top: 0; /* Ensures it's right at the top */
+  z-index: 1000; /* Ensures navbar stays on top of other content */
+}
+
+.navbar-custom .navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-custom .logo-img {
+  height: 2rem; /* or whatever size you want */
+  width: 2rem;
+  margin: 0.5rem 0.75rem 0.5rem 0;
+}
+
+.navbar-custom .logo-text {
+  color: black;
+  font-weight: normal;
+}
+
+.navbar-custom .logo-text strong {
+  font-weight: bold;
+}
+
+/* Optional: Adjust the navbar link colors if needed */
+.navbar-custom .navbar-nav .nav-link {
+  color: black;
+}
+
+.navbar-custom .navbar-nav .nav-link:hover {
+  color: #555; /* Slightly darker shade on hover */
+}
+
+.navbar-custom .nav-button {
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    background-color: transparent;
+    padding: 0.5rem 0;  /* default padding for top and bottom, but none for left and right */
+    border-radius: 0;
+    transition: color 0.3s;
+}
+
+.navbar-custom .nav-button:hover, .navbar-custom .nav-button:focus {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+/* Add padding for the login button in larger screens */
+@media (min-width: 576px) {
+    .navbar-custom .nav-button {
+        padding-left: 1rem;  /* add left padding for screens larger than mobile */
+        padding-right: 1rem; /* add right padding for screens larger than mobile */
+    }
+}

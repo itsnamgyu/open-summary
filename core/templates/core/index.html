@@ -1,0 +1,71 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %}
+  <title>OpenSummary</title>
+
+  <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/navbar.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/footer.css' %}">
+{% endblock %}
+
+{% block body %}
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'core:index' %}">
+        <img src="{% static 'core/img/logo.png' %}" alt="OpenSummary Logo" class="logo-img">
+        <span class="logo-text"><strong>Open</strong>Summary</span>
+      </a>
+
+      <!-- Collapsed content (for mobile view) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item me-3">
+            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+          </li>
+          {#          <li class="nav-item me-3">#}
+          {#            <a class="nav-link" href="#">About</a>#}
+          {#          </li>#}
+          {#          <li class="nav-item me-3">#}
+          {#            <a class="nav-link" href="#">Contact</a>#}
+          {#          </li>#}
+        </ul>
+
+        <!-- Login button on the right side -->
+        <a href="#" class="nav-link nav-button">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero section -->
+  <div class="hero-section">
+    <div class="container">
+      <div class="py-5">
+        <h1>Welcome to OpenSummary</h1>
+        <p class="lead">A platform that simplifies and summarizes content for easier understanding.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <!-- Horizontal separator line -->
+      <div class="separator"></div>
+
+      <!-- Footer content -->
+      <div class="content">
+        <div class="mb-2"><strong>OpenSummary © 2023</strong></div>
+        <a href="#terms-link" class="footer-link">Terms & policies</a>
+        <a href="#privacy-link" class="footer-link">Privacy policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+{% endblock %}
