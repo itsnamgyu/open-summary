@@ -1,0 +1,45 @@
+.article-header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.article-preview {
+  width: 95%;
+  max-height: 50rem;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+}
+
+.article .tail {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: rgb(95, 0, 255);
+  text-transform: uppercase;
+}
+
+.article h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #444;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+.article-summary h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #444;
+}
+
+.article-summary {
+  font-size: 0.9375rem;
+  color: #666;
+}
+
+.article-summary p {
+  margin-bottom: 1.5rem;
+}

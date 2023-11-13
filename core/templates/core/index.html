@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
   <link rel="stylesheet" href="{% static 'core/css/navbar.css' %}">
   <link rel="stylesheet" href="{% static 'core/css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/article.css' %}">
 {% endblock %}
 
 {% block body %}
@@ -46,9 +47,67 @@
   <!-- Hero section -->
   <div class="hero-section">
     <div class="container">
-      <div class="py-5">
-        <h1>Welcome to OpenSummary</h1>
-        <p class="lead">A platform that simplifies and summarizes content for easier understanding.</p>
+      <div class="py-5 mt-4">
+        <div class="row article">
+          <div class="col-12 mb-md-4">
+            <div class="tail">Article</div>
+            <div class="article-header">
+              Improving Language Understanding by Generative Pre-Training
+            </div>
+          </div>
+          <div class="col-12 col-md-6 mb-4">
+            <img class="article-preview" src="{% static 'core/img/preview.png' %}">
+          </div>
+          <div class="col-12 col-md-6 mb-4">
+            <h1>Summary</h1>
+            <div class="article-summary">
+              <h2>Overview</h2>
+              <p>The paper proposes a method for natural language understanding that involves pre-training a language
+                model on unlabeled text and then fine-tuning it for specific tasks. They use a two-stage training
+                procedure, consisting of unsupervised pre-training on a large text corpus and supervised fine-tuning on
+                labeled data. The approach is evaluated on multiple language understanding tasks, and it outperforms
+                task-specific models.</p>
+
+              <h2>Key Insights</h2>
+              <p>Key insights from the paper include the benefits of unsupervised pre-training using word embeddings and
+                higher-level semantics from unlabeled data, the regularization effects of unsupervised pre-training, and
+                the effectiveness of transformer networks in capturing longer-range linguistic structure. The paper also
+                highlights the minimal changes required to the model architecture during transfer and the relevance of
+                unsupervised pre-training in learning linguistic aspects relevant to target tasks.</p>
+
+              <h2>Lessons Learned</h2>
+              <p>Lessons learned from the paper involve the importance of using unsupervised pre-training and auxiliary
+                training objectives in semi-supervised learning in NLP. The authors also find that each layer of the
+                pre-trained model contains useful functionality for solving target tasks, and that generative
+                pretraining supports the learning of a wide variety of task-relevant functionality. Additionally, the
+                paper shows the benefits of the auxiliary language modeling objective during fine-tuning and the
+                effectiveness of the Transformer architecture.</p>
+
+              <h2>Questions for the Authors</h2>
+              <ol>
+                <li>How did you choose the specific language understanding tasks to evaluate the approach on?</li>
+                <li>Did you consider different architectures besides the Transformer model for the pre-training and
+                  fine-tuning stages?
+                </li>
+                <li>How would the approach fare in low-resource scenarios where labeled data is limited?</li>
+              </ol>
+
+              <h2>Potential Research Directions</h2>
+              <ol>
+                <li>Exploring the application of the proposed method in specific domains, such as medical or legal
+                  text.
+                </li>
+                <li>Investigating ways to incorporate domain-specific knowledge and constraints into the pre-training or
+                  fine-tuning process.
+                </li>
+                <li>Examining the transferability of the learned representations across languages and linguistic
+                  variations.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
