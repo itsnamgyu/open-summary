@@ -1,0 +1,11 @@
+The paper focuses on improving fluency in neural machine translation (NMT) using a language modeling approach, particularly the "Dynamic Fusion" mechanism. It first discusses challenges with large parallel corpora and the attempts to improve fluency in NMT without using a large parallel corpus. Various attempts to employ a monolingual corpus are explored, including pre-training of a translation model, initialization of distributed word representation, and construction of a pseudo-parallel corpus by back-translation.
+
+The paper introduces the importance of language models in achieving fluent output and highlights the limitations of previous approaches that combine translation and language models with fixed ratios. The proposed Dynamic Fusion mechanism utilizes an attentive architecture to consider the language model as an auxiliary element of the translation model. Experimental results in English–Japanese machine translation using the proposed Dynamic Fusion mechanism show improved BLEU and Rank-based Intuitive Bilingual Evaluation Scores (RIBES).
+
+The paper also presents the proposed Dynamic Fusion mechanism as a significant contribution, emphasizing its effectiveness in achieving fluent and adequate output in English–Japanese translation and significantly improving translation accuracy. The proposed mechanism predicts output words by attending to the language model, contributing to improved translation accuracy in a realistic setting.
+
+The experimental results indicate that Dynamic Fusion yields improved BLEU and RIBES scores compared to baseline and Simple Fusion models. The proposed approach also shows statistically significant differences in scores compared to the baseline.
+
+The paper demonstrates examples of output from the proposed Dynamic Fusion model, highlighting improvements in fluency and adequacy compared to previous models. It further discusses the role of the language model in augmenting target information to improve the fluency of the output sentence.
+
+In conclusion, the proposed Dynamic Fusion mechanism effectively introduces a language model to NMT, leading to improved translation accuracy and fluency. The paper suggests future considerations for a mechanism that can dynamically weight the mix-in ratio, as in Cold Fusion.
