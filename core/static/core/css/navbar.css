@@ -57,3 +57,10 @@
         padding-right: 1rem; /* add right padding for screens larger than mobile */
     }
 }
+
+.navbar-profile {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999rem;
+    object-fit: cover;
+}

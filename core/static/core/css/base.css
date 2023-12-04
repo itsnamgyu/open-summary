@@ -3,3 +3,61 @@ body {
   line-height: 1.5;
   color: #333;
 }
+
+.body {
+  min-height: 70vh;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #444;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.btn {
+  border-radius: 9999rem;
+  font-weight: 700;
+  padding: 0.5rem 1.25rem;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+}
+
+.btn-primary {
+  background-color: #5d02f4;
+  border-color: #5d02f4;
+}
+
+.btn-primary:hover {
+  background-color: #4a00c7;
+  border-color: #4a00c7;
+}
+
+.btn-primary:disabled {
+  /* lighter than the above */
+  background-color: #c7bfff;
+  border-color: #c7bfff;
+}
+
+.btn-outline-dark:hover {
+  color: initial;
+  background-color: #ddd;
+}
+
+.modal-content {
+  border: none;
+  padding: 2rem;
+}

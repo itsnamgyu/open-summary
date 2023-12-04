@@ -1,0 +1,52 @@
+.article-card {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-out;
+}
+
+/* disable a tag's default style */
+.article-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* get smaller when hovered */
+.article-card:hover {
+  transform: scale(0.98);
+  cursor: pointer;
+  /* change mouse pointer *
+   */
+}
+
+.article-card .preview {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  object-position: top;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-card .article-card-body {
+  padding: 1rem 1rem 2rem;
+}
+
+.article-card .title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+  transition: all 0.2s ease-out;
+}
+
+.article-card:hover .title {
+  color: #7149bd;
+}
+
+.article-card .created_date {
+  font-size: 0.875rem;
+  color: #888;
+}

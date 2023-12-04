@@ -1,0 +1,11 @@
+<a class="article-card" href="{% url 'core:article' article.id %}">
+  <img class="preview" src="{{ article.preview_image_url }}">
+  <div class="article-card-body">
+    <div class="title">
+      {{ article.title }}
+    </div>
+    <div class="created_date">
+      {{ article.created_at}}
+    </div>
+  </div>
+</a>

@@ -1,0 +1,107 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %}
+  <title>OpenSummary</title>
+  <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/navbar.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/footer.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/article.css' %}">
+  <script src="{% static 'core/js/article.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+  <!-- Navbar -->
+  {% include "core/navbar.html" %}
+  <!-- Hero section -->
+  <div id="article" class="article" data-id="{{ article.id }}">
+    <div class="container">
+      <div class="py-5 mt-4">
+        <div class="article-header">
+          <div class="tail">Article</div>
+          <h1 class="article-title">{{ article.title }}</h1>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 mb-4 article-column-left">
+            <img class="article-preview" src="{{ article.preview_image_url }}">
+          </div>
+          <div class="col-12 col-md-6 mb-4">
+            <div class="d-flex justify-content-end mb-3">
+              {% if article.summary %}
+                <button id="reset-summary-button" class="btn btn-outline-dark me-2"
+                        data-reset-summary-url="{% url 'core:article-reset-summary' article.id %}">
+                  <i class="fas fa-skull"></i>
+                  Reset
+                </button>
+              {% endif %}
+              <button id="share-button" class="btn btn-outline-dark me-2"
+                      data-title="{{ article.title }}"
+                      data-url="{{ request.build_absolute_uri }}">
+                <i class="fas fa-share"></i>
+                Share
+              </button>
+              <a class="btn btn-outline-dark" href="{{ article.pdf.url }}" download>
+                <i class="fas fa-cloud-arrow-down"></i>
+                Download PDF
+              </a>
+            </div>
+            <h1>Summary</h1>
+            {% if not article.summary %}
+              <p>This article has not been summarized yet.</p>
+              <button id="summarize-button" class="btn btn-lg btn-primary mb-3"
+                      data-parse-url="{% url 'core:article-parse' article.id %}"
+                      data-summarize-url="{% url 'core:article-summarize' article.id %}">
+                <i class="fas fa-robot me-2"></i>
+                Summarize Now
+              </button>
+              <div id="parse-progress" style="display: none;" class="summary-status">
+                <i class="fa-solid fa-spinner fa-spin me-2"></i>
+                Parsing PDF...
+              </div>
+              <div id="parse-done" style="display: none;" class="summary-status text-success">
+                <i class="fas fa-check me-2"></i>
+                Parse complete
+              </div>
+              <div id="parse-error" style="display: none;" class="summary-status text-danger">
+                <i class="fas fa-circle-exclamation me-2"></i>
+                Parse failed
+              </div>
+              <div id="summary-progress" style="display: none;" class="summary-status">
+                <i class="fa-solid fa-spinner fa-spin me-2"></i>
+                Summarizing content...
+              </div>
+              <div id="summary-done" style="display: none;" class="summary-status text-success">
+                <i class="fas fa-check me-2"></i>
+                Summarization complete
+              </div>
+              <div id="summary-error" style="display: none;" class="d-none summary-status text-danger">
+                <i class="fas fa-circle-exclamation me-2"></i>
+                Summarization failed
+              </div>
+            {% else %}
+              <div class="article-summary">
+                <p>{{ article.summary.content | linebreaks }}</p>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <!-- Horizontal separator line -->
+      <div class="separator"></div>
+
+      <!-- Footer content -->
+      <div class="content">
+        <div class="mb-2"><strong>OpenSummary © 2023</strong></div>
+        <a href="#terms-link" class="footer-link">Terms & policies</a>
+        <a href="#privacy-link" class="footer-link">Privacy policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+{% endblock %}

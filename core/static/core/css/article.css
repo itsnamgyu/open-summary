@@ -1,18 +1,3 @@
-.article-header {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.article-preview {
-  width: 95%;
-  max-height: 50rem;
-  object-fit: cover;
-  object-position: center;
-  border: 1px solid #ddd;
-  border-radius: 1rem;
-}
-
 .article .tail {
   font-size: 1.5rem;
   font-weight: 900;
@@ -20,24 +5,62 @@
   text-transform: uppercase;
 }
 
+.article .article-title {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .article .article-column-left {
+    padding-right: 3rem;
+  }
+}
+
+.article .pdf-download {
+  /*font-size: 1.125rem;*/
+  /*font-weight: 700;*/
+  /*color: #333;*/
+  text-decoration: none;
+}
+
+.article .article-header {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .article .article-header {
+    margin-bottom: 4rem;
+  }
+
+  .article-header::after {
+    content: '';
+    display: block;
+    width: 40%;
+    padding-top: 1rem;
+    border-bottom: 6px solid #888;
+  }
+}
+
+
+.article .summary-status {
+  padding: 0.5rem 0;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #666;
+}
+
 .article h1 {
   font-size: 1.75rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: #444;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 1rem;
-}
-
-.article-summary h2 {
-  font-size: 1.25rem;
-  font-weight: 700;
   color: #444;
 }
 
-.article-summary {
-  font-size: 0.9375rem;
-  color: #666;
+.article .article-preview {
+  width: 100%;
+  max-height: 40rem;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
 }
 
 .article-summary p {

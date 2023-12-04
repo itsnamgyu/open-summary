@@ -1,3 +1,4 @@
 django~=3.0
-PyPDF2
+Pillow
 pdf2image
+django-bootstrap4
