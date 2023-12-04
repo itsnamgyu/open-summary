@@ -2,3 +2,9 @@ django~=3.0
 Pillow
 pdf2image
 django-bootstrap4
+requests
+torch
+transformers
+accelerate
+protobuf
+xformers

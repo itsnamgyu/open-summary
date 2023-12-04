@@ -59,7 +59,7 @@ class ArticleParseView(SingleObjectMixin, View):
     slug_field = "id"
 
     def post(self, request, *args, **kwargs):
-        sleep(3)
+        sleep(1)  # cuz it's too fast!
         article = self.get_object()
         article.parse()
         return HttpResponse("OK")
@@ -70,7 +70,6 @@ class ArticleSummarizeView(SingleObjectMixin, View):
     slug_field = "id"
 
     def post(self, request, *args, **kwargs):
-        sleep(3)
         article = self.get_object()
         article.summarize()
         return HttpResponse("OK")

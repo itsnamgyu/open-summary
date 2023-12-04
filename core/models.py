@@ -1,8 +1,14 @@
+import json
+
 from django.conf.urls.static import static
 from django.db import models
 
+print("Loading parse and summarize modules...")
+
 from parse import parse
 from summarize import summarize
+
+print("Completed loading parse and summarize modules")
 
 
 class Article(models.Model):
@@ -14,11 +20,13 @@ class Article(models.Model):
 
     def parse(self):
         content = parse(self.pdf.path)
-        ArticleText.objects.create(article=self, content=content)
+        ArticleText.objects.create(article=self, content=json.dumps(content))
 
     def summarize(self):
-        summary = summarize(self.parsed.content)
-        ArticleSummary.objects.create(article=self, content=summary)
+        summary = summarize(json.loads(self.parsed.content))
+        ArticleSummary.objects.create(article=self, content=summary["total_summary"])
+        self.title = summary["title"]
+        self.save()
 
     @property
     def preview_image_url(self):
